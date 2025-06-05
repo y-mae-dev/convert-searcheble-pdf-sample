@@ -155,14 +155,11 @@ def save_docai_response_to_json(
         f.write(json_obj)
 
 
-def convert_docai_response_to_hocr(
-    docai_document: documentai.Document, title: str, document_path: str
-) -> str:
+def convert_docai_response_to_hocr(title: str, document_path: str) -> str:
     """
     Document AI JSONからhOCR形式に変換する
 
     Args:
-        docai_document (Document): OCRドキュメント
         title (str): hOCRファイルタイトル
         document_path (str): Document AI JSONパス
 
@@ -217,7 +214,7 @@ def make_searchable_pdf(
                 docai_document = process_document_with_docai(chunk_file)
                 save_docai_response_to_json(docai_document, json_path)
                 hocr_content = convert_docai_response_to_hocr(
-                    docai_document, f"Chunk {i + 1}", json_path
+                    f"Chunk {i + 1}", json_path
                 )
 
                 with open(hocr_path, "w", encoding="utf-8") as f:
