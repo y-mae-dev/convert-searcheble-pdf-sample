@@ -13,7 +13,7 @@ use_docaiオプションを`true`にすることで、Document AIによるOCRが
 `False`にする場合は、OCRmyPDFによるOCRが行われ、PDF変換される。
 
 ```zsh
-$ uv run convert_to_searchable_pdf_v2.py [input.pdf] [output.pdf] [use_docai]
+$ uv run convert_to_searchable_pdf_sapmle.py [input.pdf] [output.pdf] [use_docai]
 ```
 
 ```mermaid
